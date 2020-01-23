@@ -1,6 +1,16 @@
 .App {
   text-align: center;
 }
+ul{
+  width: 100%;
+  list-style-type: none;
+}
+ul li{
+  float: left;
+}
+.list-group-unbordered>.list-group-item {
+  background-color: #dc3545;
+}
 
 .App-logo {
   height: 40vmin;
