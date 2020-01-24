@@ -118,7 +118,7 @@ export default class Login extends React.Component {
              <div className="container justify-content-center">                  
                 <div className="col-xl-12 col-md-12 col-sm-12 col-12" >
                    <nav class="navbar bg-danger fixed">
-                            <a className="navbar-brand font-weight-bold font-white" href="#">Log In Account</a>
+                            <a className="navbar-brand font-weight-bold font-white" href="#">Register Account</a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
@@ -138,7 +138,7 @@ export default class Login extends React.Component {
                                 </div>
                                 <div class="d-flex justify-content-center form_container">
                                     <form>
-                                        <div className="input-group mb-3 mt-3">
+                                        <div className="input-group mb-3 mt-5">
                                             <div className="input-group-append">
                                                 <span className="input-group-text"><i class="fas fa-user"></i></span>
                                             </div>
@@ -148,14 +148,20 @@ export default class Login extends React.Component {
                                             <div className="input-group-append">
                                                 <span className="input-group-text"><i class="fas fa-key"></i></span>
                                             </div>
-                                            <input type="password" value= {this.state.password} className="form-control input_pass" placeholder="Enter Password" onChange={this.handlePassword}/>
+                                            <input type="password" value= {this.state.password} className="form-control input_pass" placeholder="Enter  Password" onChange={this.handlePassword}/>
                                         </div>  
+                                        <div className="input-group mb-2">
+                                            <div className="input-group-append">
+                                                <span className="input-group-text"><i class="fas fa-key"></i></span>
+                                            </div>
+                                            <input type="password" value= {this.state.password} className="form-control input_pass" placeholder="Comfirm Password" onChange={this.handlePassword}/>
+                                        </div> 
                                          <div className="d-flex justify-content-center login_container">
                                                 <span className="text-white">{this.state.status}</span>
                                        </div>                  
                                         <div className="d-flex justify-content-center mt-3 login_container">
-                                          <Link type="button" name="button" className="btn btn-primary mr-3" to="/register">Register</Link>
-                                         <button type="button" name="button" class="btn login_btn" onClick={this.login}>Login</button>
+                                            <Link type="button" name="button" className="btn login_btn mr-3" to="/login">Back</Link>
+                                            <button type="button" name="button" class="btn login_btn" onClick={this.login}>Save</button>
                                        </div>
                                  </form>
                             </div>   

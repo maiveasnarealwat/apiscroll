@@ -11,7 +11,7 @@ export default class  ContactList extends React.Component{
        state = {
            contacts: [],
            per : 1 ,
-           page : 50 ,
+           page : 50,
            totalPage : null,
            scrolling : false ,
            strSearch : "",
@@ -26,7 +26,7 @@ export default class  ContactList extends React.Component{
            })
        };
        // Crate function event scroll on windows
-       handleScroll =()=> {
+       handleScroll =()=> {        
            const {page , per , totalPage ,scrolling} = this.state;
            if(scrolling)return ;
            if(totalPage <= page) return
@@ -47,12 +47,12 @@ export default class  ContactList extends React.Component{
                page : prevState.page +1,
                scrolling : true,
            }),this.loadContacts )
-
+             
        }
       //Create Function load Data from API
        loadContacts =()=>{
            const {per , page ,totalPage , contacts} =this.state;
-           const url = 'https://api.github.com/search/repositories?q=java?page='+per+'&per_page='+page+'';
+           const url = 'https://api.github.com/search/repositories?q=php?page='+per+'&per_page='+page+'';
            fetch (url)
            .then(response => response.json())
            .then(json =>this.setState(
@@ -61,8 +61,11 @@ export default class  ContactList extends React.Component{
                    scrolling : false ,
                    totalPage : json.total_pages,
                    isLoad : true
+                   
                }
+               
            ))
+           
        }
       // Crate function Search Text
        searchText =(strSearch)=>{
@@ -100,7 +103,7 @@ export default class  ContactList extends React.Component{
        } else{
         return (     
             
-            
+             
              <div className="container justify-content-center">                  
                 <div className="col-xl-12 col-md-12 col-sm-12 col-12" >
                    <nav class="navbar bg-danger fixed">
@@ -118,7 +121,7 @@ export default class  ContactList extends React.Component{
                       {   
                         this.state.contacts.map(item =>
                         <li className="col-xl-4 col-md-4 col-md-4"> 
-                                
+                                 {/* {console.log("Total Page ::",this.state.contacts)} */}
                                 <div class="card card-widget widget-user box">                                
                                 <div class="widget-user-header bg-info"> 
                                     <h3 class="widget-user-username" >{item.full_name}</h3>
